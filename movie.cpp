@@ -3,12 +3,23 @@
 using namespace std;
 class Movie{
 	string name;
-	int atp=100;
-	int ctp=50;
+	int atp;
+	int ctp;
 	int adult,child;
 	int ga,char_per,don;
 	
 	public:
+
+	Movie()
+	{
+		atp=100;
+		ctp=50;
+	}
+	Movie(int a, int b)
+	{
+		atp=a;
+		ctp=b;
+	}
 		
 	void getData()
 	{
@@ -27,7 +38,7 @@ class Movie{
 		cout<<"total child amout = "<<child*ctp<<endl;
 		ga=adult*atp+child*ctp;
 		cout<<"gross amount = "<<ga<<endl;
-		cout<<"donation="<<ga*0.1<<endl;
+		cout<<"donation="<<ga*0.1<<endl<<endl;
 		
 	}
 	
@@ -40,8 +51,12 @@ class Movie{
 int main()
 {
 	
-	Movie b;
-	b.getData();
-	b.ticket();
+	Movie m1;
+	m1.getData();
+	m1.ticket();
+
+	Movie m2(5,10);
+	m2.getData();
+	m2.ticket();
 
 }
