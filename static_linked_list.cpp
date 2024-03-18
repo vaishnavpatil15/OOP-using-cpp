@@ -49,14 +49,30 @@ void remove()
 
 }
 
+void search(int key)
+{
+    int j=head;
+    while(j!=NULL)
+    {
+        if(n[j].data==key)
+        {
+            cout<<"search successfull"<<endl;
+            cout<<key<<" is found at location "<<j<<endl;
+            return;
+        }
+        j=n[j].next;
+    }
+}
 
 int main(){
 	
 	getdata();
 	traverse();
 	insert(10,7);
+    	insert(20,9);
 	traverse();
 	remove();
 	traverse();	
+    	search(12);
 	
 }
