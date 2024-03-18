@@ -59,7 +59,7 @@ class List{
 				temp=temp->next;
 				loc++;
 			}
-			cout<<"search unsuccessfull"<<endl<<element not found<<endl;
+			cout<<"search unsuccessfull"<<endl<<"element not found"<<endl;
 		}
 	}
 	
