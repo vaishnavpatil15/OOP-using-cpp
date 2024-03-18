@@ -46,6 +46,22 @@ class List{
 	    
 	}
 
+	void search(int key){
+		int loc=0;
+		Node* temp=head;
+		while(temp!=NULL){
+			if(temp->data==key){
+				loc++;
+				cout<<"search successfull"<<endl<<key<<"found at location "<<loc<<endl;
+				return;
+			}
+			else{
+				temp=temp->next;
+				loc++;
+			}
+			cout<<"search unsuccessfull"<<endl<<element not found<<endl;
+		}
+	}
 	
 };
 
@@ -61,6 +77,7 @@ int main()
 	l1.display();
 	l1.remove();
 	l1.display();
+	l1.search(5);
 	
 	
 }
