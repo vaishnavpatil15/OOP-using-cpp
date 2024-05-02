@@ -5,30 +5,6 @@ class Matrix{
     public:
     int arr[3][3];
 
-    void getMatrix()
-    {
-        cout<<"enter matrix elements"<<endl;
-        for(int i=0;i<3;i++)
-        {
-            for(int j=0;j<3;j++)
-            {
-                cin>>arr[i][j];
-            }
-        }
-    }
-    void Display()
-    {
-        for(int i=0;i<3;i++)
-        {
-            for(int j=0;j<3;j++)
-            {
-                cout<<arr[i][j]<<"\t";
-            }
-            cout<<endl;
-        }
-        cout<<endl;
-    }
-
     Matrix operator +(Matrix &m2)
     {
         Matrix m3;
@@ -59,17 +35,47 @@ class Matrix{
 
 };
 
+istream& operator >>(istream& is , Matrix m)
+{
+    cout<<"enter matrix elements"<<endl;
+        for(int i=0;i<3;i++)
+        {
+            for(int j=0;j<3;j++)
+            {
+                cin>>m.arr[i][j];
+            }
+        }
+}
+
+ostream& operator <<(ostream& os , Matrix m)
+{
+    cout<<endl<<"Matrix : "<<endl;
+    for(int i=0;i<3;i++)
+        {
+            for(int j=0;j<3;j++)
+            {
+                cout<<m.arr[i][j]<<"\t";
+            }
+            cout<<endl;
+        }
+        cout<<endl;
+}
+
+
 int main()
 {
     Matrix m1;
     Matrix m2;
     Matrix m3;
     Matrix m4;
-    m1.getMatrix();
-    m2.getMatrix();
+
+    cin>>m1;
+    cin>>m2;
+
     m3=m1+m2;
     m4=m1-m2;
-    m3.Display();
-    m4.Display();
+
+    cout<<m3;
+    cout<<m4;
 
 }
